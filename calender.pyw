@@ -1,5 +1,4 @@
 import sys, os
-import subprocess
 import pandas as pd
 from qtpy_cfg import *
 from datetime import datetime
@@ -28,7 +27,6 @@ from PyQt5.QtWidgets import (
     QWidget,
     QTextEdit,
     QLineEdit,
-    QComboBox,
     QListWidget,
     QPushButton,
     QDockWidget,
