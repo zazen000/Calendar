@@ -35,9 +35,6 @@ from PyQt5.QtWidgets import (
     QTableWidgetItem,
 )
 
-sys.path.insert(1, "C:\\Users\\mount\\source\\repos\\MyDashboard\\MODULES\\")
-from ubEnigma import write_txt_file, read_txt_file
-
 
 mongo = db("mydb", "appointments")
 now = datetime.now()
@@ -365,8 +362,6 @@ class Example(QMainWindow):
     # This function displays the newly formatted date calls the dock widget
     def event_form(self, date, day):
         self.date_data.setText(day + "  " + date)
-        write_txt_file("string_date.txt", date, "w")
-
         self.items.setFeatures(QDockWidget.DockWidgetClosable)
         self.setCentralWidget(self.frame1)
         self.addDockWidget(Qt.BottomDockWidgetArea, self.items)
@@ -379,12 +374,11 @@ class Example(QMainWindow):
     def exit(self):
         sys.exit()
 
-
-def main():
-    app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
+    
 
 
 if __name__ == "__main__":
-    main()
+    app = QApplication(sys.argv)
+    ex = Example()
+    ex.show()
+    sys.exit(app.exec_())
