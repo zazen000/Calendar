@@ -8,8 +8,6 @@ from PyQt5.QtCore import (
     QDate,
     QRect,
     QTimer,
-    QObject,
-    QThread,
     QDateTime,
     pyqtSignal,
 )
